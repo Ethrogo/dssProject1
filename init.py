@@ -8,11 +8,11 @@ def create_tables(cursor):
         cursor.execute("CREATE TABLE Sports (id INT AUTO_INCREMENT PRIMARY KEY,  name  VARCHAR(63))")
         cursor.execute("INSERT INTO Sports VALUES (0, 'Basketball')")
     except: 
-        print("fail")
-    try: 
-        cursor.execute("CREATE TABLE Teams (id INT AUTO_INCREMENT PRIMARY KEY, sport_id int, FOREIGN KEY (sport_id) REFERENCES Sports(id), name VARCHAR(63))")
-    except: 
         pass
+    try: 
+        cursor.execute("CREATE TABLE Teams (id INT AUTO_INCREMENT PRIMARY KEY, sport_id int, FOREIGN KEY (sport_id) REFERENCES Sports(id), name VARCHAR(63), UNIQUE(name))")
+    except: 
+        print("fail")
     try: 
         cursor.execute("CREATE TABLE Players (id INT PRIMARY KEY,  name  VARCHAR(63), team_id int, Foreign Key (team_id) REFERENCES Teams(id), is_active BOOL)")
     except: 
