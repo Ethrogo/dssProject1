@@ -1,2 +1,14 @@
 Created by Ethan Rogowsky 
 Contact: ugf5jt@virginia.edu
+
+INFO: 
+    -The nba.sqlite file referenced can be found at the following link 
+        https://www.kaggle.com/datasets/wyattowalsh/basketball/data
+    -The csv list of all NBA players is from
+        https://sports-statistics.com/sports-data/nba-basketball-datasets-csv-files/ 
+    -And more info on the prop odds API can be found at 
+        https://www.prop-odds.com/
+    To use this repository follow these steps
+        -Download MySql and run a local instance
+        -Download or fork this repository and run init.py
+        -

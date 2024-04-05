@@ -1,2 +1,3 @@
 # Byte-compiled / optimized / DLL files
 *.sqlite
+__pycache__
