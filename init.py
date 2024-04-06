@@ -14,7 +14,7 @@ def create_tables(cursor):
     except: 
         pass
     try: 
-        cursor.execute("CREATE TABLE Players (id INT PRIMARY KEY,  name  VARCHAR(63), team_id int, Foreign Key (team_id) REFERENCES Teams(id), is_active BOOL)")
+        cursor.execute("CREATE TABLE Players (id INT PRIMARY KEY,  name  VARCHAR(63), is_active BOOL, sport_id int, FOREIGN KEY (sport_id) REFERENCES Sports(id))")
     except: 
         pass
     try: 
@@ -38,3 +38,5 @@ except DatabaseError as e:
 
 cursor.execute("USE sportsDB")
 create_tables(cursor=cursor)
+cursor.close()
+con.close()

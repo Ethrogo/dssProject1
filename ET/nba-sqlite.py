@@ -51,7 +51,8 @@ sql_con = mysql.connector.connect(host="localhost", user="root", password="Eleph
 sql_cur = sql_con.cursor(buffered=True)
 sql_cur.execute("USE sportsDB")
 
-# add_team_names(cursor=cursor, sql_cur=sql_cur, sql_con=sql_con)
-# add_past_games(cursor=cursor, sql_cur=sql_cur, sql_con=sql_con)
+add_team_names(cursor=cursor, sql_cur=sql_cur, sql_con=sql_con)
+add_past_games(cursor=cursor, sql_cur=sql_cur, sql_con=sql_con)
 sql_cur.close()
 cursor.close()
+sql_con.close()
