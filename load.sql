@@ -27,3 +27,15 @@ SELECT Players.name
 FROM Players
 INNER JOIN Sports ON Players.sport_id = Sports.id
 WHERE Sports.name = 'Basketball' AND Players.Is_active = true;
+/** Finds the average points scored by the New York Knicks **/
+SELECT AVG(points_scored) AS average_points_scored
+FROM (
+    SELECT 
+        CASE 
+            WHEN Teams.name = 'New York Knicks' AND GameArchives.home_team_id = Teams.id THEN home_team_score 
+            WHEN Teams.name = 'New York Knicks' AND GameArchives.away_team_id = Teams.id THEN away_team_score 
+        END AS points_scored
+    FROM GameArchives
+    JOIN Teams ON GameArchives.home_team_id = Teams.id OR GameArchives.away_team_id = Teams.id
+    WHERE Teams.name = 'New York Knicks'
+) AS team_points;
