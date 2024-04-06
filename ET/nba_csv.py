@@ -17,7 +17,6 @@ for row in df.iterrows():
     is_active = False
     if year == 2018: 
         is_active = True
-    print(index, name, is_active)
     sql_cur.execute("INSERT INTO Players (id, name, is_active, sport_id) VALUES (%s, %s, %s, %s)", (index, name, is_active, 1))
     index += 1
 sql_con.commit()

@@ -9,8 +9,9 @@ INFO:
     -And more info on the prop odds API can be found at 
         https://www.prop-odds.com/
     To use this repository follow these steps
-        -Download MySql and run a local instance (Make root password Elephant123! or change)
+        -Download MySql and run a local instance (Make root password Elephant123! or change in all ETL files)
         -Download or fork this repository and run init.py
         -Download the nba.sqlite file from the link above and add it to your local repo
-        -Run
+        -Run main.py from a command line or IDE (This should take a long time >= 5 mins)
+        -Look at load.py, this shows 4 potential sql queries 
         
