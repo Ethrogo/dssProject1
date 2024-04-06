@@ -10,15 +10,15 @@ def create_tables(cursor):
     except: 
         pass
     try: 
-        cursor.execute("CREATE TABLE Teams (id INT AUTO_INCREMENT PRIMARY KEY, sport_id int, FOREIGN KEY (sport_id) REFERENCES Sports(id), name VARCHAR(63), UNIQUE(name))")
+        cursor.execute("CREATE TABLE Teams (id INT AUTO_INCREMENT PRIMARY KEY, sport_id int, FOREIGN KEY (sport_id) REFERENCES Sports(id), name VARCHAR(63), UNIQUE(name), abbr VARCHAR(3), UNIQUE(abbr))")
     except: 
-        print("fail")
+        pass
     try: 
         cursor.execute("CREATE TABLE Players (id INT PRIMARY KEY,  name  VARCHAR(63), team_id int, Foreign Key (team_id) REFERENCES Teams(id), is_active BOOL)")
     except: 
         pass
     try: 
-        cursor.execute("CREATE TABLE GameArchives (id INT PRIMARY KEY,  home_team_id  INT, Foreign Key (home_team_id) REFERENCES Teams(id), away_team_id  INT, Foreign Key (away_team_id) REFERENCES Teams(id), home_team_score INT, away_team_score INT)")
+        cursor.execute("CREATE TABLE GameArchives (id INT PRIMARY KEY,  home_team_id  INT, Foreign Key (home_team_id) REFERENCES Teams(id), away_team_id  INT, Foreign Key (away_team_id) REFERENCES Teams(id), home_team_score INT, away_team_score INT, game_date DATE)")
     except: 
         pass
     try: 
