@@ -13,5 +13,5 @@ INFO:
         -Download or fork this repository and run init.py
         -Download the nba.sqlite file from the link above and add it to your local repo
         -Run main.py from a command line or IDE (This should take a long time >= 5 mins)
-        -Look at load.py, this shows 4 potential sql queries 
+        -Look at load.sql, this explains a few potential sql queries, they can all be run in a MySql instance
         
